@@ -1,26 +1,62 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Car Rental System</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
 
-<header>
-    <h1>Car Rental Booking System</h1>
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="cars.html">Cars</a>
-        <a href="booking.html">Booking</a>
-        <a href="contact.html">Contact</a>
-    </nav>
-</header>
+    <header>
+        <div class="logo">🚗 Car Rental</div>
 
-<section class="hero">
-    <h2>Rent Your Dream Car</h2>
-    <p>Affordable and reliable car rental services.</p>
-    <a href="cars.html" class="btn">View Cars</a>
-</section>
+        <nav>
+            <a href="index.html" class="active">Home</a>
+            <a href="cars.html">Cars</a>
+            <a href="booking.html">Booking</a>
+            <a href="contact.html">Contact</a>
+            <a href="#" id="logoutBtn" class="login-btn">Logout</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+
+            <h2>Rent Your Dream Car</h2>
+
+            <p>
+                Affordable, Luxury and Premium Cars Available
+                For Rent Anytime.
+            </p>
+
+            <div class="buttons">
+
+                <a href="cars.html" class="btn">
+                    View Cars
+                </a>
+
+                <a href="booking.html" class="btn btn-outline">
+                    Book Now
+                </a>
+
+            </div>
+
+        </div>
+    </section>
+
+    <script>
+
+        if (localStorage.getItem("isLoggedIn") !== "true") {
+            window.location.href = "login.html";
+        }
+
+    </script>
+
+    <script src="js/script.js"></script>
 
 </body>
+
 </html>
