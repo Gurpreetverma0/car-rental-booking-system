@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Car Rental System</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+    <header>
+
+        <div class="logo">🚗 Car Rental</div>
+
+        <nav>
+            <a href="login.html">Login</a>
+            <a href="register.html">Register</a>
+        </nav>
+
+    </header>
+
+    <div class="login-container">
+
+        <h2>Create Account</h2>
+
+        <form id="registerForm">
+
+            <input type="text" id="regName" placeholder="Enter Name" required>
+
+            <input type="email" id="regEmail" placeholder="Enter Email" required>
+
+            <input type="password" id="regPassword" placeholder="Enter Password" required>
+
+            <button type="submit">
+                Register
+            </button>
+
+        </form>
+
+        <p style="text-align:center; margin-top:15px;">
+            Already have an account?
+            <a href="login.html">Login Here</a>
+        </p>
+
+    </div>
+
+    <script>
+        // Register page open hote hi current login session remove kar do
+        localStorage.removeItem("isLoggedIn");
+    </script>
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>
