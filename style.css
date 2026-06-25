@@ -2,64 +2,485 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:Arial;
+    font-family:Arial, sans-serif;
+}
+body{
+    padding-top:90px;
+    background:#f4f7fb;
 }
 
+.active{
+    color:#ff4d30;
+} 
+
+/* Navbar */
+
 header{
-    background:#222;
+    width:100%;
+    position:fixed;
+    top:0;
+    left:0;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:18px 8%;
+    background:#fc1111;
+
+    box-shadow:0 2px 10px rgba(37, 214, 199, 0.3);
+
+    z-index:1000;
+}
+
+.logo{
     color:white;
-    padding:15px;
-    text-align:center;
+    font-size:28px;
+    font-weight:bold;
 }
 
 nav a{
-    color:rgb(249, 247, 247);
+    color:white;
     text-decoration:none;
-    margin:10px;
+    margin-left:25px;
+    font-size:18px;
+    transition:.3s;
 }
 
+nav a:hover{
+    color:#ff4d30;
+}
+
+.login-btn{
+    background:#ff4d30;
+    padding:10px 18px;
+    border-radius:6px;
+    color:white;
+}
+
+.login-btn:hover{
+    background:#e63b20;
+}
+
+/* Hero Section */
+
 .hero{
-    height:80vh;
+    height:100vh;
+    background:url("../images/image 3.jpg") center/cover no-repeat;
+
     display:flex;
-    flex-direction:column;
     justify-content:center;
     align-items:center;
-    background:#6af591;
+    text-align:center;
+}
+
+.hero-content{
+
+animation:fadeIn 1s ease;
+
+}
+
+@keyframes fadeIn{
+
+from{
+
+opacity:0;
+
+transform:translateY(40px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+.hero h2{
+
+font-size:65px;
+
+font-weight:bold;
+
+margin-bottom:20px;
+
+}
+
+.hero p{
+    color:white;
+}
+.buttons{
+    display:flex;
+    justify-content:center;
+    gap:15px;
 }
 
 .btn{
-    background:#fd6dfd;
-    color:rgb(13, 2, 2);
-    padding:10px 20px;
+    background:#ff4d30;
+    color:white;
     text-decoration:none;
-    margin-top:10px;
+
+    padding:14px 28px;
+    border-radius:5px;
 }
 
-.container{
-    display:flex;
-    gap:20px;
-    padding:20px;
-    flex-wrap:wrap;
+.btn-outline{
+    background:transparent;
+    border:2px solid rgb(96, 237, 65);
+}
+
+/* Featured Cars */
+
+.cars{
+    padding:80px 8%;
+    text-align:center;
+}
+
+.cars h2{
+    margin-bottom:40px;
+    font-size:40px;
+}
+
+.car-container{
+    display:grid;
+    grid-template-columns:
+    repeat(auto-fit,minmax(280px,1fr));
+
+    gap:25px;
 }
 
 .card{
+
     width:300px;
-    border:1px solid #101010;
-    padding:10px;
-    text-align:center;
+
+    background:white;
+
+    border-radius:12px;
+
+    overflow:hidden;
+
+    box-shadow:0 10px 20px rgba(0,0,0,.15);
+
+    transition:.3s;
+
+}
+.card:hover{
+
+    transform:translateY(-10px);
+
 }
 
 .card img{
     width:100%;
+    height:200px;
+    object-fit:cover;
 }
 
-form{
+.container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,300px));
+    justify-content:center;
+    gap:25px;
+    padding:20px 10px 10px;
+}
+
+.card h3{
+
+    margin:15px 0;
+
+    color:#222;
+
+}
+
+.card p{
+
+    color:#555;
+
+    margin-bottom:15px;
+
+}
+
+.card button{
+    background:#ff4d30;
+    color:white;
+
+    border:none;
+    padding:10px 20px;
+
+    margin-bottom:20px;
+    cursor:pointer;
+}
+.book-btn{
+
+display:inline-block;
+
+padding:12px 22px;
+
+background:#ff4d30;
+
+color:white;
+
+text-decoration:none;
+
+border-radius:6px;
+
+margin-bottom:20px;
+
+transition:.3s;
+
+}
+
+.book-btn:hover{
+
+background:#d93617;
+
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+    header{
+        flex-direction:column;
+    }
+
+    nav{
+        margin-top:15px;
+    }
+
+    .hero h1{
+        font-size:40px;
+    }
+
+    .hero p{
+        font-size:18px;
+    }
+
+    .buttons{
+        flex-direction:column;
+    }
+
+}
+.search-box{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.search-box input{
+
+width:450px;
+
+padding:14px;
+
+font-size:16px;
+
+border-radius:30px;
+
+border:1px solid #ccc;
+
+outline:none;
+
+}
+.login-container{
     width:400px;
-    margin:50px auto;
+    margin:150px auto;
+    padding:30px;
+    background:white;
+    border-radius:10px;
+    box-shadow:0 0 10px rgba(0,0,0,0.2);
 }
 
-input,button{
+.login-container h2{
+    text-align:center;
+    margin-bottom:20px;
+}
+
+#bookingForm,
+#contactForm{
+
+    width:450px;
+
+    margin:40px auto;
+
+    background:white;
+
+    padding:30px;
+
+    border-radius:12px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.2);
+
+}
+#registerForm{
+
     width:100%;
-    padding:10px;
-    margin:10px 0;
+
+    margin:0;
+
+    background:transparent;
+
+    padding:0;
+
+    box-shadow:none;
+
+}
+#registerForm input{
+
+    width:100%;
+
+    padding:15px;
+
+    margin-bottom:18px;
+
+    border-radius:8px;
+
+    border:1px solid #ccc;
+
+    font-size:16px;
+
+}
+#registerForm button{
+
+    width:100%;
+
+    padding:15px;
+
+    background:#ff4d30;
+
+    color:white;
+
+    border:none;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+    font-size:18px;
+
+}
+.login-container{
+
+    width:420px;
+
+    margin:120px auto;
+
+    background:white;
+
+    padding:35px;
+
+    border-radius:15px;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.15);
+
+}
+#loginForm{
+
+    width:100%;
+
+    margin:0;
+
+    background:transparent;
+
+    padding:0;
+
+    box-shadow:none;
+
+}
+#loginForm input{
+
+    width:100%;
+
+    padding:15px;
+
+    margin:15px 0;
+
+    border-radius:8px;
+
+    border:1px solid #ccc;
+
+    font-size:16px;
+
+}
+#loginForm button{
+
+    width:100%;
+
+    padding:15px;
+
+    background:#ff4d30;
+
+    color:white;
+
+    border:none;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+    font-size:18px;
+
+}
+.login-container{
+
+    width:420px;
+
+    margin:120px auto;
+
+    background:white;
+
+    padding:35px;
+
+    border-radius:15px;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.15);
+
+}
+
+form input,
+form select{
+
+width:100%;
+
+padding:14px;
+
+margin-bottom:18px;
+
+border-radius:8px;
+
+border:1px solid #ccc;
+
+font-size:16px;
+
+}
+
+form button{
+
+width:100%;
+
+padding:15px;
+
+border:none;
+
+background:#ff4d30;
+
+color:white;
+
+font-size:18px;
+
+border-radius:8px;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+form button:hover{
+
+background:#d93617;
+
 }
