@@ -5,20 +5,70 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+<header>
+    <div class="logo">🚗 Car Rental</div>
 
-<h1>Book Your Car</h1>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="cars.html">Cars</a>
+        <a href="booking.html">Booking</a>
+        <a href="contact.html">Contact</a>
+        <a href="#" id="logoutBtn" class="login-btn">Logout</a>
+    </nav>
+</header>
+<h1>Book Your  Drime Car</h1>
 
 <form id="bookingForm">
 
-<input type="text" placeholder="Full Name" required>
+<input type="text" id="fullName" placeholder="Full Name" required>
 
-<input type="email" placeholder="Email" required>
+<br><br>
 
-<input type="date" required>
+<input type="email" id="email" placeholder="Email" required>
 
-<input type="date" required>
+<br><br>
 
-<button type="submit">Book Now</button>
+<input type="date" id="pickupDate" required>
+
+<br><br>
+
+<input type="date" id="returnDate" required>
+
+<br><br>
+
+<select id="car" required>
+
+<option value="">Select Car</option>
+
+<option value="1200"> Mahindra Thar - ₹1200/day </option>
+
+<option value="2500"> Hyundai Creta - ₹2500/day </option>
+
+<option value="2000"> Tata Nexon - ₹2000/day </option>
+
+<option value="1500"> Taxi car - ₹1500/day </option>
+
+<option value="3000"> Toyota corolla - ₹3000/day </option>
+
+<option value="2500"> Tesla model Y - ₹2500/day </option>
+
+<option value="3000"> TFord F-Series - ₹3000/day </option>
+
+<option value="2000"> Honda CR-V - ₹2000/day </option>
+
+</select>
+
+<br><br>
+
+<input type="tel" id="phone" placeholder="Phone Number" required>
+
+<br><br>
+
+<button type="submit" class="book-btn">
+
+Book Now
+
+</button>
 
 </form>
 
