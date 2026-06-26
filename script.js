@@ -34,6 +34,8 @@ if (loginForm) {
 
 }
 
+
+
 // =========================
 // Register
 // =========================
@@ -73,6 +75,8 @@ if (registerForm) {
 
 }
 
+
+
 // =========================
 // Booking Form
 // =========================
@@ -90,6 +94,8 @@ if (bookingForm) {
     });
 
 }
+
+
 
 // =========================
 // Car Search
@@ -126,6 +132,7 @@ if (searchInput) {
 }
 
 
+
 // =========================
 // Logout
 // =========================
@@ -145,3 +152,40 @@ if (logoutBtn) {
     });
 
 }
+// =========================
+// Booking Date & Phone Validation
+// =========================
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const today = new Date();
+
+    const yyyy = today.getFullYear();
+    const mm = String(today.getMonth() + 1).padStart(2, "0");
+    const dd = String(today.getDate()).padStart(2, "0");
+
+    const todayStr = `${yyyy}-${mm}-${dd}`;
+
+    const pickupDate = document.getElementById("pickupDate");
+    const returnDate = document.getElementById("returnDate");
+    const phoneInput = document.getElementById("phone");
+
+    if (pickupDate) {
+        pickupDate.min = todayStr;
+    }
+
+    if (returnDate) {
+        returnDate.min = todayStr;
+    }
+
+    if (phoneInput) {
+
+        phoneInput.addEventListener("input", function () {
+
+            this.value = this.value.replace(/[^0-9]/g, "").slice(0, 10);
+
+        });
+
+    }
+
+});
