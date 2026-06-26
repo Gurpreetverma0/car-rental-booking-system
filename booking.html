@@ -1,78 +1,126 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Book Car</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
-<header>
-    <div class="logo">🚗 Car Rental</div>
+    <header>
+        <div class="logo"> Car Rental Booking System</div>
 
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="cars.html">Cars</a>
-        <a href="booking.html">Booking</a>
-        <a href="contact.html">Contact</a>
-        <a href="#" id="logoutBtn" class="login-btn">Logout</a>
-    </nav>
-</header>
-<h1>Book Your  Drime Car</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="cars.html">Cars</a>
+            <a href="booking.html">Booking</a>
+            <a href="contact.html">Contact</a>
+            <a href="index.html" id="logoutBtn" class="login-btn">Logout</a>
+        </nav>
+    </header>
+    <h1>Book Your Drime Car</h1>
 
-<form id="bookingForm">
+    <form id="bookingForm">
 
-<input type="text" id="fullName" placeholder="Full Name" required>
+        <input type="text" id="fullName" placeholder="Full Name" required>
 
-<br><br>
+        <br><br>
 
-<input type="email" id="email" placeholder="Email" required>
+        <input type="email" id="email" placeholder="Email" required>
 
-<br><br>
+        <br><br>
 
-<input type="date" id="pickupDate" required>
+        <input type="date" id="pickupDate" required>
 
-<br><br>
+        <br><br>
 
-<input type="date" id="returnDate" required>
+        <input type="date" id="returnDate" required>
 
-<br><br>
+        <br><br>
 
-<select id="car" required>
+        <select id="car" required>
 
-<option value="">Select Car</option>
+            <option value="">Select Car</option>
 
-<option value="1200"> Mahindra Thar - ₹1200/day </option>
+            <option value="1200"> Mahindra Thar - ₹1200/day </option>
 
-<option value="2500"> Hyundai Creta - ₹2500/day </option>
+            <option value="2500"> Hyundai Creta - ₹2500/day </option>
 
-<option value="2000"> Tata Nexon - ₹2000/day </option>
+            <option value="2000"> Tata Nexon - ₹2000/day </option>
 
-<option value="1500"> Taxi car - ₹1500/day </option>
+            <option value="1500"> Taxi car - ₹1500/day </option>
 
-<option value="3000"> Toyota corolla - ₹3000/day </option>
+            <option value="3000"> Toyota corolla - ₹3000/day </option>
 
-<option value="2500"> Tesla model Y - ₹2500/day </option>
+            <option value="2500"> Tesla model Y - ₹2500/day </option>
 
-<option value="3000"> TFord F-Series - ₹3000/day </option>
+            <option value="3000"> TFord F-Series - ₹3000/day </option>
 
-<option value="2000"> Honda CR-V - ₹2000/day </option>
+            <option value="2000"> Honda CR-V - ₹2000/day </option>
 
-</select>
+        </select>
 
-<br><br>
+        <br><br>
 
-<input type="tel" id="phone" placeholder="Phone Number" required>
+        <input type="text" id="phone" placeholder="Phone Number (10 digits)" maxlength="10" required <br><br>
 
-<br><br>
+        <button type="submit" class="book-btn">
 
-<button type="submit" class="book-btn">
+            Book Now
 
-Book Now
+        </button>
 
-</button>
+    </form>
 
-</form>
+<!-- Footer Start -->
 
-<script src="js/script.js"></script>
+<footer>
+
+    <div class="footer-container">
+
+        <div class="footer-box">
+
+            <h3>Car Rental Booking System</h3>
+
+            <p>Premium Car Rental Service</p>
+
+        </div>
+
+        <div class="footer-box">
+
+            <h3>Contact Us</h3>
+
+            <p>📧 gurpreetverma447@gmail.com</p>
+
+            <p>📞 +91 8081106764</p>
+
+        </div>
+
+        <div class="footer-box">
+
+            <h3>Quick Links</h3>
+
+            <a href="index.html">Home</a>
+            <a href="cars.html">Cars</a>
+            <a href="booking.html">Booking</a>
+            <a href="contact.html">Contact</a>
+
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+
+        © 2026 Car Rental Booking System | All Rights Reserved.
+
+    </div>
+
+</footer>
+
+<!-- Footer End -->
+
+    <script src="js/script.js"></script>
 
 </body>
+
 </html>
