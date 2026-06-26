@@ -1,91 +1,204 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Available Cars</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
-<header>
-    <div class="logo">🚗 Car Rental</div>
+    <header>
+        <div class="logo"> Car Rental Booking System</div>
 
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="cars.html">Cars</a>
-        <a href="booking.html">Booking</a>
-        <a href="contact.html">Contact</a>
-        <a href="#" id="logoutBtn" class="login-btn">Logout</a>
-    </nav>
-</header>
-<h1>Available Cars</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="cars.html">Cars</a>
+            <a href="booking.html">Booking</a>
+            <a href="contact.html">Contact</a>
+            <a href="#" id="logoutBtn" class="login-btn">Logout</a>
+        </nav>
+    </header>
 
-<div class="search-box">
-    <input
-        type="text"
-        id="searchInput"
-        placeholder="Search Car..."
-    >
-</div>
+    <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Search Car...">
+    </div>
 
-<div class="container">
+    <div class="container">
 
-<div class="card">
-     <img src="images/image 1.jpg">
-    <h3>Thar</h3>
-    <p>₹1200 / Day</p>
-     <a href="booking.html" class="book-btn">Book Now</a>
-</div>
+        <div class="card">
+            <img src="images/image 1.jpg">
+            <h3>Thar</h3>
+            <p class="category">🚙 Off-Road SUV</p>
+            <p>₹1200 / Day</p>
+            <a href="booking.html" class="book-btn">Book Now</a>
+        </div>
 
-<div class="card">
-    <img src="images/image 4.jpg">
-    <h3>Hyundai Creta</h3>
-    <p>₹2500 / Day</p>
-     <a href="booking.html" class="book-btn">Book Now</a>
-</div>
+        <div class="card">
+            <img src="images/image 4.jpg">
+            <h3>Hyundai Creta</h3>
+            <p class="category">⭐ Premium SUV</p>
+            <p>₹2500 / Day</p>
+            <a href="booking.html" class="book-btn">Book Now</a>
+        </div>
 
-<div class="card">
-    <img src="images/image 5.jpg">
-    <h3>Tata Nexon</h3>
-    <p>₹2000 / Day</p>
-     <a href="booking.html" class="book-btn">Book Now</a>
-</div>
+        <div class="card">
+            <img src="images/image 5.jpg">
+            <h3>Tata Nexon</h3>
+            <p>₹2000 / Day</p>
+            <a href="booking.html" class="book-btn">Book Now</a>
+        </div>
 
-<div class="card">
-    <img src="images/image 6.jpg">
-    <h3>Taxi car</h3>
-    <p>₹1500 / Day</p>
-     <a href="booking.html" class="book-btn">Book Now</a>
-</div>
+        <div class="card">
+            <img src="images/image 6.jpg">
+            <h3>Taxi car</h3>
+            <p>₹1500 / Day</p>
+            <a href="booking.html" class="book-btn">Book Now</a>
+        </div>
 
-<div class="card">
-    <img src="images/image 7.jpg">
-    <h3>Toyota Corolla</h3>
-    <p>₹3000 / Day</p>
-     <a href="booking.html" class="book-btn">Book Now</a>
-</div>
+        <div class="card">
+            <img src="images/image 7.jpg">
+            <h3>Toyota Corolla</h3>
+            <p class="category">🚘 Premium Sedan</p>
+            <p>₹3000 / Day</p>
+            <a href="booking.html" class="book-btn">Book Now</a>
+        </div>
 
-<div class="card">
-    <img src="images/image 8.jpg">
-    <h3>Tesla Model Y</h3>
-    <p>₹2500 / Day</p>
-     <a href="booking.html" class="book-btn">Book Now</a>
-</div>
+        <div class="card">
+            <img src="images/image 8.jpg">
+            <h3>Tesla Model Y</h3>
+            <p class="category">⚡ Luxury Electric SUV</p>
+            <p>₹2500 / Day</p>
+            <a href="booking.html" class="book-btn">Book Now</a>
+        </div>
 
-<div class="card">
-    <img src="images/image 9.jpg">
-    <h3>Ford F-Series</h3>
-    <p>₹3000 / Day</p>
-     <a href="booking.html" class="book-btn">Book Now</a>
-</div>
+        <div class="card">
+            <img src="images/image 9.jpg">
+            <h3>Ford F-Series</h3>
+            <p>₹3000 / Day</p>
+            <a href="booking.html" class="book-btn">Book Now</a>
+        </div>
 
-<div class="card">
-    <img src="images/image 10.jpg">
-    <h3>Honda CR-V</h3>
-    <p>₹2000 / Day</p>
-     <a href="booking.html" class="book-btn">Book Now</a>
-</div>
+        <div class="card">
+            <img src="images/image 10.jpg">
+            <h3>Honda CR-V</h3>
+            <p class="category">🛻 Premium Pickup</p>
+            <p>₹2000 / Day</p>
+            <a href="booking.html" class="book-btn">Book Now</a>
+        </div>
 
-</div>
-<script src="js/script.js"></script>
+    </div>
+
+    <!-- Special Offers Section -->
+
+    <section class="offers">
+
+        <h2>🔥 Special Offers</h2>
+
+        <div class="offer-container">
+
+            <div class="offer-card">
+                <h3>Weekend Offer</h3>
+                <p>Get <strong>20% OFF</strong> on all Luxury Cars.</p>
+            </div>
+
+            <div class="offer-card">
+                <h3>First Booking</h3>
+                <p>Flat <strong>₹500 OFF</strong> on your first booking.</p>
+            </div>
+
+            <div class="offer-card">
+                <h3>Monthly Rental</h3>
+                <p>Book for 30 days and get <strong>15% Discount</strong>.</p>
+            </div>
+
+        </div>
+
+    </section>
+    <!-- Why Choose Us -->
+    <section class="why-us">
+
+        <h2>Why Choose Us?</h2>
+
+        <div class="why-container">
+
+            <div class="why-card">
+                <h3>🚗 50+ Premium Cars</h3>
+                <p>Choose from a wide range of luxury and budget-friendly cars.</p>
+            </div>
+
+            <div class="why-card">
+                <h3>🛡️ Fully Insured Vehicles</h3>
+                <p>Every car is insured for your complete safety and peace of mind.</p>
+            </div>
+
+            <div class="why-card">
+                <h3>💰 Best Price Guarantee</h3>
+                <p>Affordable rental prices with no hidden charges.</p>
+            </div>
+
+            <div class="why-card">
+                <h3>📞 24×7 Customer Support</h3>
+                <p>Our support team is always available to help you.</p>
+            </div>
+
+            <div class="why-card">
+                <h3>⚡ Instant Booking</h3>
+                <p>Book your favorite car in just a few clicks.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+<!-- Footer Start -->
+
+<footer>
+
+    <div class="footer-container">
+
+        <div class="footer-box">
+
+            <h3>Car Rental Booking System</h3>
+
+            <p>Premium Car Rental Service</p>
+
+        </div>
+
+        <div class="footer-box">
+
+            <h3>Contact Us</h3>
+
+            <p>📧 gurpreetverma447@gmail.com</p>
+
+            <p>📞 +91 8081106764</p>
+
+        </div>
+
+        <div class="footer-box">
+
+            <h3>Quick Links</h3>
+
+            <a href="index.html">Home</a>
+            <a href="cars.html">Cars</a>
+            <a href="booking.html">Booking</a>
+            <a href="contact.html">Contact</a>
+
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+
+        © 2026 Car Rental Booking System | All Rights Reserved.
+
+    </div>
+
+</footer>
+
+<!-- Footer End -->
+
+    <script src="js/script.js"></script>
 
 </body>
+
 </html>
