@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Add New Car</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+    <div class="login-container">
+
+        <h2>Add New Car</h2>
+
+        <form action="/cars" method="POST">
+
+            <input
+                type="text"
+                name="name"
+                placeholder="Car Name"
+                required
+            >
+
+            <input
+                type="text"
+                name="brand"
+                placeholder="Brand Name"
+                required
+            >
+
+            <input
+                type="number"
+                name="price"
+                placeholder="Price Per Day"
+                required
+            >
+
+            <input
+                type="text"
+                name="image"
+                placeholder="Image URL"
+                required
+            >
+
+            <button type="submit">
+                Add Car
+            </button>
+
+        </form>
+
+        <br>
+
+        <a href="/cars">⬅ Back</a>
+
+    </div>
+
+</body>
+
+</html>

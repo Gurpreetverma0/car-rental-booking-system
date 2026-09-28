@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>All Bookings</title>
+
+    <link rel="stylesheet" href="/css/style.css">
+
+</head>
+
+<body>
+
+    <h1 style="text-align:center;">All Bookings</h1>
+
+    <table border="1" cellpadding="10" cellspacing="0" style="margin:auto;">
+
+        <tr>
+
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Car</th>
+            <th>Pickup</th>
+            <th>Return</th>
+            <th>Action</th>
+
+        </tr>
+
+        <% bookings.forEach((booking)=> { %>
+
+            <tr>
+
+                <td>
+                    <%= booking.customerName %>
+                </td>
+                <td>
+                    <%= booking.email %>
+                </td>
+                <td>
+                    <%= booking.phone %>
+                </td>
+                <td>
+                    <%= booking.carName %>
+                </td>
+                <td>
+                    <%= booking.pickupDate.toDateString() %>
+                </td>
+                <td>
+                    <%= booking.returnDate.toDateString() %>
+                </td>
+
+                <td>
+
+                    <a href="/bookings/<%= booking._id %>/edit" class="edit-btn">
+                        Edit
+                    </a>
+
+                    <form action="/bookings/<%= booking._id %>?_method=DELETE" method="POST">
+
+                        <button class="delete-btn">
+
+                            Delete
+
+                        </button>
+
+                    </form>
+
+                </td>
+
+            </tr>
+
+            <% }) %>
+
+    </table>
+
+</body>
+
+</html>

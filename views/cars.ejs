@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cars | Car Rental</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <a href="/" class="brand"><span class="brand-icon">🚗</span><span>Car Rental</span></a>
+  <nav class="main-nav">
+    <a href="/">Home</a>
+    <a href="/cars" class="active">Cars</a>
+    <a href="/booking">Booking</a>
+    <a href="/contact">Contact</a>
+    <% if (currentUser && currentUser.role === "admin") { %>
+      <a href="/dashboard">Dashboard</a>
+    <% } else if (currentUser) { %>
+      <a href="/my-bookings">My Bookings</a>
+    <% } %>
+    <a href="/logout" class="nav-button">Logout</a>
+  </nav>
+</header>
+
+<main class="page-main">
+  <section class="page-heading">
+    <span>OUR FLEET</span>
+    <h1>Choose Your Car</h1>
+    <p>Select a car that fits your journey and budget.</p>
+  </section>
+
+  <% if (currentUser && currentUser.role === "admin") { %>
+    <div class="admin-actions">
+      <a href="/cars/new" class="btn btn-primary">+ Add New Car</a>
+    </div>
+  <% } %>
+
+  <div class="search-box">
+    <input type="text" id="searchInput" placeholder="Search by car name...">
+  </div>
+
+  <section class="car-grid">
+    <% if (cars.length === 0) { %>
+      <div class="empty-state">
+        <h3>No cars available</h3>
+        <p>Please add cars from the admin dashboard.</p>
+      </div>
+    <% } %>
+
+    <% cars.forEach((car) => { %>
+      <article class="car-card">
+        <img src="<%= car.image %>" alt="<%= car.name %>" onerror="this.src='/images/image 3.jpg'">
+        <div class="car-card-body">
+          <span class="car-brand"><%= car.brand %></span>
+          <h3><%= car.name %></h3>
+          <p class="price">₹<%= car.price %> <small>/ day</small></p>
+
+          <a href="/booking?carId=<%= car._id %>" class="btn btn-primary full-btn">Book Now</a>
+
+          <% if (currentUser && currentUser.role === "admin") { %>
+            <div class="admin-card-actions">
+              <a href="/cars/<%= car._id %>/edit" class="edit-btn">Edit</a>
+              <form action="/cars/<%= car._id %>?_method=DELETE" method="POST" onsubmit="return confirm('Delete this car?')">
+                <button type="submit" class="delete-btn">Delete</button>
+              </form>
+            </div>
+          <% } %>
+        </div>
+      </article>
+    <% }) %>
+  </section>
+
+  <section class="offers">
+    <div class="section-heading">
+      <span>SPECIAL OFFERS</span>
+      <h2>Save on your next ride</h2>
+    </div>
+    <div class="feature-grid">
+      <article class="offer-card"><h3>Weekend Offer</h3><p>20% OFF on selected luxury cars.</p></article>
+      <article class="offer-card"><h3>First Booking</h3><p>Flat ₹500 OFF on your first booking.</p></article>
+      <article class="offer-card"><h3>Monthly Rental</h3><p>Get special pricing on long-term rentals.</p></article>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div><h3>Car Rental</h3><p>Premium car rental service.</p></div>
+  <div><h3>Contact</h3><p>gurpreetverma447@gmail.com</p><p>+91 8081106764</p></div>
+  <div><h3>Quick Links</h3><a href="/">Home</a><a href="/cars">Cars</a><a href="/booking">Booking</a></div>
+</footer>
+<div class="footer-bottom">© 2026 Car Rental Booking System. All Rights Reserved.</div>
+
+<script src="/js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register | Car Rental</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="auth-page">
+
+<header class="site-header">
+  <a href="/" class="brand"><span class="brand-icon">🚗</span><span>Car Rental</span></a>
+  <nav class="main-nav"><a href="/">Home</a><a href="/login">Login</a></nav>
+</header>
+
+<main class="auth-container">
+  <div class="auth-card">
+    <div class="auth-icon">👤</div>
+    <h1>Create Account</h1>
+    <p>Register to book your preferred car.</p>
+
+    <form action="/register" method="POST">
+      <label>Name</label>
+      <input type="text" name="name" placeholder="Enter your name" required>
+      <label>Email</label>
+      <input type="email" name="email" placeholder="Enter your email" required>
+      <label>Password</label>
+      <input type="password" name="password" placeholder="Create a password" minlength="6" required>
+      <button type="submit" class="btn btn-primary full-btn">Register</button>
+    </form>
+
+    <p class="auth-link">Already have an account? <a href="/login">Login</a></p>
+  </div>
+</main>
+<script src="/js/script.js"></script>
+</body>
+</html>

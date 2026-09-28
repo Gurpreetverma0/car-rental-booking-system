@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+    <h1 style="text-align:center;">🚗 Admin Dashboard</h1>
+
+    <div class="container">
+
+        <div class="card">
+            <h2>Total Users</h2>
+            <h1>
+                <%= totalUsers %>
+            </h1>
+        </div>
+
+        <div class="card">
+            <h2>Total Cars</h2>
+            <h1>
+                <%= totalCars %>
+            </h1>
+        </div>
+
+        <div class="card">
+            <h2>Total Bookings</h2>
+            <h1>
+                <%= totalBookings %>
+            </h1>
+        </div>
+
+    </div>
+
+    <br>
+
+    <div style="text-align:center;">
+
+        <div style="text-align:center; margin-top:30px;">
+
+            <a href="/" class="book-btn">
+                🏠 Home
+            </a>
+
+            <a href="/cars" class="book-btn">
+                🚗 View Cars
+            </a>
+
+            <a href="/bookings" class="book-btn">
+                📅 View Bookings
+            </a>
+
+            <a href="/cars/new" class="book-btn">
+                ➕ Add New Car
+            </a>
+
+            <a href="/logout" class="book-btn">
+                🚪 Logout
+            </a>
+
+        </div>
+
+    </div>
+    <hr style="margin:40px 0;">
+
+    <h2 style="text-align:center;">📅 Recent Bookings</h2>
+
+    <table border="1" cellpadding="10" cellspacing="0" style="margin:auto; width:90%; text-align:center;">
+
+        <tr>
+            <th>Customer</th>
+            <th>Car</th>
+            <th>Pickup Date</th>
+            <th>Return Date</th>
+        </tr>
+
+        <% recentBookings.forEach((booking)=> { %>
+
+            <tr>
+
+                <td>
+                    <%= booking.customerName %>
+                </td>
+
+                <td>
+                    <%= booking.carName %>
+                </td>
+
+                <td>
+                    <%= booking.pickupDate.toDateString() %>
+                </td>
+
+                <td>
+                    <%= booking.returnDate.toDateString() %>
+                </td>
+
+            </tr>
+
+            <% }) %>
+
+    </table>
+
+</body>
+
+</html>

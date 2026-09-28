@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Edit Booking</title>
+
+    <link rel="stylesheet" href="/css/style.css">
+
+</head>
+
+<body>
+
+<div class="login-container">
+
+<h2>Edit Booking</h2>
+
+<form action="/bookings/<%= booking._id %>?_method=PUT" method="POST">
+
+<input
+type="text"
+name="customerName"
+value="<%= booking.customerName %>"
+required>
+
+<input
+type="email"
+name="email"
+value="<%= booking.email %>"
+required>
+
+<input
+type="text"
+name="phone"
+value="<%= booking.phone %>"
+required>
+
+<input
+type="text"
+name="carName"
+value="<%= booking.carName %>"
+required>
+
+<input
+type="date"
+name="pickupDate"
+value="<%= booking.pickupDate.toISOString().split('T')[0] %>"
+required>
+
+<input
+type="date"
+name="returnDate"
+value="<%= booking.returnDate.toISOString().split('T')[0] %>"
+required>
+
+<button type="submit">
+
+Update Booking
+
+</button>
+
+</form>
+
+</div>
+
+</body>
+
+</html>

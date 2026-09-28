@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Bookings | Car Rental</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<header class="site-header">
+  <a href="/" class="brand"><span class="brand-icon">🚗</span><span>Car Rental</span></a>
+  <nav class="main-nav">
+    <a href="/">Home</a>
+    <a href="/cars">Cars</a>
+    <a href="/booking">Booking</a>
+    <a href="/my-bookings" class="active">My Bookings</a>
+    <a href="/contact">Contact</a>
+    <a href="/logout" class="nav-button">Logout</a>
+  </nav>
+</header>
+
+<main class="form-page">
+  <div class="form-card" style="max-width:1100px;">
+    <div class="section-heading">
+      <span>YOUR RESERVATIONS</span>
+      <h1>My Bookings</h1>
+      <p>Welcome, <strong><%= currentUser.name %></strong>. Here you can see all bookings made with your account.</p>
+    </div>
+
+    <% if (bookings.length === 0) { %>
+      <div class="empty-state">
+        <h2>No bookings yet</h2>
+        <p>Choose a car and make your first reservation.</p>
+        <a href="/cars" class="btn btn-primary">View Cars</a>
+      </div>
+    <% } else { %>
+      <div style="overflow-x:auto;">
+        <table style="width:100%;border-collapse:collapse;">
+          <thead>
+            <tr>
+              <th style="text-align:left;padding:12px;border-bottom:1px solid #ddd;">Car</th>
+              <th style="text-align:left;padding:12px;border-bottom:1px solid #ddd;">Pickup</th>
+              <th style="text-align:left;padding:12px;border-bottom:1px solid #ddd;">Return</th>
+              <th style="text-align:left;padding:12px;border-bottom:1px solid #ddd;">Phone</th>
+              <th style="text-align:left;padding:12px;border-bottom:1px solid #ddd;">Booked On</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% bookings.forEach(booking => { %>
+              <tr>
+                <td style="padding:12px;border-bottom:1px solid #eee;"><strong><%= booking.carName %></strong></td>
+                <td style="padding:12px;border-bottom:1px solid #eee;"><%= new Date(booking.pickupDate).toLocaleDateString('en-IN') %></td>
+                <td style="padding:12px;border-bottom:1px solid #eee;"><%= new Date(booking.returnDate).toLocaleDateString('en-IN') %></td>
+                <td style="padding:12px;border-bottom:1px solid #eee;"><%= booking.phone %></td>
+                <td style="padding:12px;border-bottom:1px solid #eee;"><%= new Date(booking.createdAt).toLocaleDateString('en-IN') %></td>
+              </tr>
+            <% }) %>
+          </tbody>
+        </table>
+      </div>
+    <% } %>
+  </div>
+</main>
+<script src="/js/script.js"></script>
+</body>
+</html>
